@@ -1,0 +1,12 @@
+name: energy-calculator
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - streamlit>=1.28.0
+  - pandas>=2.0.0
+  - plotly>=5.15.0
+  - pip
+  - pip:
+    - kaleido  # For plotly static image export (optional)
