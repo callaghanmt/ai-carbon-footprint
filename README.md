@@ -4,19 +4,18 @@ An interactive Streamlit app that calculates the energy footprint and carbon imp
 
 ## Applications Overview
 
-This project includes two complementary Streamlit applications for analyzing the energy consumption and carbon footprint of digital activities:
+This project includes two complementary Streamlit applications for analysing the energy consumption and carbon footprint of digital activities:
 
 ### 🔋 Single Country Calculator (`app.py`)
-**Purpose**: Analyze your digital carbon footprint from one location's perspective
+**Purpose**: Analyse your digital carbon footprint from one location's perspective
 
 **Key Features**:
 - **Location Selection**: Choose from UK, France, Iceland, or USA/Texas electrical grids
-- **Comprehensive Task Library**: Input quantities for 10 different AI and cloud computing tasks
+- **Task Library**: Input quantities for 10 different AI and cloud computing tasks
 - **Real-time Calculations**: Instant energy consumption (Wh/kWh) and CO₂ impact calculations
 - **Energy Equivalents**: Compare to familiar references (smartphone charges, Netflix hours)
 - **Visual Breakdown**: Interactive charts showing energy consumption by task
 - **Environmental Impact**: Tree days to offset, car driving time equivalents
-- **Multi-Location Comparison**: See how your usage would impact across all four grids
 - **Detailed Tables**: Complete breakdown of quantities, unit energy, and totals
 
 **Best For**: 
@@ -30,9 +29,9 @@ This project includes two complementary Streamlit applications for analyzing the
 
 **Key Features**:
 - **Dual Country Selection**: Pick any two countries for direct comparison
-- **Synchronized Input**: Enter activities once, see impact in both locations
+- **Synchronised Input**: Enter activities once, see impact in both locations
 - **Impact Difference Analysis**: Automatic calculation of CO₂ differences and ratios
-- **Smart Insights**: Highlights which country is cleaner and by how much (e.g., "Iceland is 22x cleaner")
+- **Smart Insights**: Shows which country is cleaner and by how much (e.g., "Iceland is 22x cleaner")
 - **Side-by-Side Visualizations**: Parallel breakdown charts for each country
 - **Direct Comparison Charts**: Grouped bar charts showing task-by-task differences
 - **Environmental Equivalents**: Tree days and car time for both countries
