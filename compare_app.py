@@ -84,14 +84,14 @@ def main() -> None:
         This tool demonstrates how the same digital activities can have dramatically different environmental impacts depending on where they're performed, based on each country's electricity grid composition.
         
         **How it works:**
-        1. **Select two countries** - Choose any two locations to compare their grid carbon intensities
-        2. **Enter your activities** - Input the same quantities you would use in both countries
-        3. **Compare the impact** - See side-by-side charts showing how much more (or less) CO₂ is produced in each location
+        1. **Select two data centre locations** - Choose any two countries where AI/cloud servers might be located to compare their grid carbon intensities
+        2. **Enter your activities** - Input the same digital tasks you would perform, regardless of where you are
+        3. **Compare the impact** - See side-by-side charts showing how much more (or less) CO₂ is produced depending on server location
         
         **Key insights:**
-        - **Grid composition matters** - Countries with more renewable energy (like Iceland with geothermal) produce far less CO₂
-        - **Same task, different impact** - Generating an AI image in Iceland vs Texas can differ by over 20x in carbon emissions
-        - **Location awareness** - Understanding your grid's carbon intensity can help you make more environmentally conscious choices
+        - **Data centre location matters** - Countries with more renewable energy (like Iceland with geothermal) produce far less CO₂ for the same computing tasks
+        - **Same task, different impact** - Generating an AI image on servers in Iceland vs Texas can differ by over 20x in carbon emissions
+        - **Consumer vs provider choices** - Whilst consumers don't always get to choose server locations, service providers certainly do. Understanding these differences can help you choose greener services when options are available
         
         **The numbers:**
         - Iceland: 18 g CO₂/kWh (geothermal & hydro)

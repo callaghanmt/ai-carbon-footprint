@@ -66,13 +66,14 @@ def main() -> None:
         This tool helps you understand the environmental impact of your digital activities by calculating their energy consumption and carbon footprint.
         
         **How it works:**
-        1. **Choose your location** - Different countries have different carbon intensities based on their energy mix (renewable vs fossil fuels)
+        1. **Choose the data centre location** - Select where the AI/cloud servers are located, not where you are. Different countries have different carbon intensities based on their energy mix (renewable vs fossil fuels)
         2. **Enter your activities** - Input how many times you perform various AI and cloud computing tasks
         3. **View your impact** - See your total energy consumption, carbon footprint, and helpful comparisons
         
         **Understanding the results:**
         - **Energy consumption** is measured in watt-hours (Wh) - the same unit used for your household electricity
-        - **Carbon footprint** varies dramatically by location - the same task in Iceland produces far less CO₂ than in Texas
+        - **Carbon footprint** depends on the data centre's grid, not your location - the same AI task running on servers in Iceland produces far less CO₂ than servers in Texas
+        - **Consumer vs provider choices** - Whilst consumers don't always get to choose server locations, service providers certainly do. Understanding these differences can help you choose greener services when options are available
         - **Equivalents** help put your impact in perspective (smartphone charges, Netflix hours, etc.)
         
         The data is based on recent research into the energy consumption of AI models and cloud computing infrastructure.
