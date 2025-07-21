@@ -58,9 +58,13 @@ def main() -> None:
     st.title("⚡ AI & Cloud Energy Consumption Calculator")
     st.markdown("Calculate the energy footprint of your digital activities")
     
-    # Introduction and instructions
-    with st.expander("ℹ️ How to Use This Calculator", expanded=False):
-        st.markdown("""
+    # Create tabs
+    tab1, tab2 = st.tabs(["🧮 Calculator", "📚 References"])
+    
+    with tab1:
+        # Introduction and instructions
+        with st.expander("ℹ️ How to Use This Calculator", expanded=False):
+            st.markdown("""
         **Welcome to the AI & Cloud Energy Calculator!**
         
         This tool helps you understand the environmental impact of your digital activities by calculating their energy consumption and carbon footprint.
@@ -78,13 +82,12 @@ def main() -> None:
         
         The data is based on recent research into the energy consumption of AI models and cloud computing infrastructure.
         """)
-    
-
-    # Create two columns for input and results
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        st.header("🔧 Configure Your Usage")
+        
+        # Create two columns for input and results
+        col1, col2 = st.columns([1, 1])
+        
+        with col1:
+            st.header("🔧 Configure Your Usage")
         
         # Location selection
         st.subheader("🌍 Select Your Location")
@@ -104,13 +107,25 @@ def main() -> None:
         
         # AI Tasks section
         st.subheader("🤖 AI Tasks")
+        ai_task_refs = {
+            "Generate a paragraph of AI text": 1,
+            "Generate 100 lines of code using an AI tool": 2,
+            "Generate a 1024x1024 pixel AI image": 3,
+            "Generate a 30-second AI music track": 4,
+            "Transcribe 1 hour of audio with AI": 5,
+            "Generate a 3-second AI video from text": 6,
+            "Generate a 3-second AI video from image": 7,
+        }
+        
         for task, base_energy in energy_data["AI Tasks"].items():
+            ref_num = ai_task_refs[task]
             quantity = st.number_input(
                 f"{task} ({base_energy} Wh each)",
                 min_value=0,
                 value=0,
                 step=1,
-                key=f"ai_{task}"
+                key=f"ai_{task}",
+                help=f"{base_energy} Wh per task (See Note {ref_num})"
             )
             if quantity > 0:
                 task_energy = quantity * base_energy
@@ -119,13 +134,24 @@ def main() -> None:
         
         # Data & Cloud Tasks section
         st.subheader("☁️ Data & Cloud Tasks")
+        data_task_refs = {
+            "Do a Google search without AI summary": 8,
+            "Charging a smartphone": 9,
+            "Storing 1000 photographs in the cloud for 1 month": 10,
+            "Stream music for 1 hour": 11,
+            "Watching 1-hour of content on Netflix": 12,
+            "Video-calling for 1 hour with 10 people": 13,
+        }
+        
         for task, base_energy in energy_data["Data & Cloud Tasks"].items():
+            ref_num = data_task_refs[task]
             quantity = st.number_input(
                 f"{task} ({base_energy} Wh each)",
                 min_value=0,
                 value=0,
                 step=1,
-                key=f"data_{task}"
+                key=f"data_{task}",
+                help=f"{base_energy} Wh per task (See Note {ref_num})"
             )
             if quantity > 0:
                 task_energy = quantity * base_energy
@@ -247,6 +273,64 @@ def main() -> None:
         
         # Show comparison table
         st.dataframe(comparison_df.round(3), use_container_width=True)
+    
+    with tab2:
+        st.header("📚 Data Sources & References")
+        st.markdown("All energy consumption values are based on the following sources:")
+        
+        st.subheader("🤖 AI Tasks")
+        st.markdown("""
+        **Note 1:** Generate a paragraph of AI text (7 Wh)
+        - *Reference to be added*
+        
+        **Note 2:** Generate 100 lines of code using an AI tool (0.5 Wh)
+        - *Reference to be added*
+        
+        **Note 3:** Generate a 1024x1024 pixel AI image (2 Wh)
+        - *Reference to be added*
+        
+        **Note 4:** Generate a 30-second AI music track (100 Wh)
+        - *Reference to be added*
+        
+        **Note 5:** Transcribe 1 hour of audio with AI (10 Wh)
+        - *Reference to be added*
+        
+        **Note 6:** Generate a 3-second AI video from text (500 Wh)
+        - *Reference to be added*
+        
+        **Note 7:** Generate a 3-second AI video from image (650 Wh)
+        - *Reference to be added*
+        """)
+        
+        st.subheader("☁️ Data & Cloud Tasks")
+        st.markdown("""
+        **Note 8:** Do a Google search without AI summary (0.3 Wh)
+        - *Reference to be added*
+        
+        **Note 9:** Charging a smartphone (20 Wh)
+        - *Reference to be added*
+        
+        **Note 10:** Storing 1000 photographs in the cloud for 1 month (8 Wh)
+        - *Reference to be added*
+        
+        **Note 11:** Stream music for 1 hour (75 Wh)
+        - *Reference to be added*
+        
+        **Note 12:** Watching 1-hour of content on Netflix (200 Wh)
+        - *Reference to be added*
+        
+        **Note 13:** Video-calling for 1 hour with 10 people (2000 Wh)
+        - *Reference to be added*
+        """)
+        
+        st.subheader("🌍 Grid Carbon Intensity Data")
+        st.markdown("""
+        **Grid carbon intensity values (g CO₂/kWh):**
+        - UK: 233 g CO₂/kWh - *Reference to be added*
+        - France: 79 g CO₂/kWh - *Reference to be added*
+        - Iceland: 18 g CO₂/kWh - *Reference to be added*
+        - USA/Texas: 400 g CO₂/kWh - *Reference to be added*
+        """)
 
 if __name__ == "__main__":
     main()
